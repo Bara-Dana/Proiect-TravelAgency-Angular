@@ -1,0 +1,4 @@
+<div class="list-container">
+  <app-preview-offer *ngFor="let ofr of offers" [offer]="ofr"
+                     (click)="onSelectOffer(ofr.id)"></app-preview-offer>
+</div>

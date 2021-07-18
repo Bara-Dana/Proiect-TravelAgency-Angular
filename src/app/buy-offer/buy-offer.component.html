@@ -1,0 +1,29 @@
+<mat-card class="card-container" *ngIf="data">
+
+  <img [src]="data.offer.imageUrl" >
+
+  <mat-card-header>
+    <mat-card-title>{{ data.offer.title }}</mat-card-title>
+    <mat-card-subtitle>{{ data.offer.description }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      Price per night: {{ data.offer.pricePerNight }} euro!
+    </p>
+    <mat-form-field>
+      <mat-label>
+        Select client
+      </mat-label>
+      <mat-select [(ngModel)]="selectedUserId">
+        <mat-option *ngFor="let client of users" [value]="client.id">
+          {{ client.firstName }} {{ client.lastName }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    <button mat-button (click)="confirmOffer()" *ngIf="userService.getUser()">Confirm offer</button>
+    <button mat-button (click)="login()" *ngIf="!userService.getUser()">login</button>
+  </mat-card-content>
+
+</mat-card>

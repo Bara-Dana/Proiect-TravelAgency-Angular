@@ -1,0 +1,4 @@
+<div class="list-container">
+  <app-country-preview *ngFor="let country of countries" [country]="country"
+                       (click)="onSelectCountry(country.id)"></app-country-preview>
+</div>

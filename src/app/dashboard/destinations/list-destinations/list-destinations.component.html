@@ -1,0 +1,6 @@
+<div class="list-container">
+  <app-preview-destinations *ngFor="let destination of destinations" [destination]="destination"
+                           (click)="onSelectDestination(destination.id)">
+
+  </app-preview-destinations>
+</div>
