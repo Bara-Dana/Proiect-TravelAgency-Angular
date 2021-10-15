@@ -1,4 +1,8 @@
 .card-container {
-  max-width: 400px;
+  max-width: 200px;
   margin: 16px;
 }
+.mat-card-actions{
+  max-width: 300px;
+  margin: 16px;
+ }

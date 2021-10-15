@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
 import {UserService} from "../../user/user.service";
@@ -13,35 +13,41 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private userService: UserService, private router: Router) {
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService,
+              private userService: UserService,
+              private router: Router) {
+
     this.loginForm = formBuilder.group({
-      email: ['mariuspop@gmail.com', Validators.email],
-      password: ['123456', Validators.minLength(6)],
+      email: ['', Validators.email],
+      password: ['', Validators.minLength(6)]
     });
   }
-
   ngOnInit(): void {
   }
 
   onLogin(): void {
+    this.router.navigate(["/", "home"])
+    console.log(this.loginForm.value);
 
-    // this.router.navigate(["/", "dashboard"])
-    // console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value).subscribe((response: any) => {
         console.log(response);
 
-        let user = response;
-        this.userService.setUser(user);
+        if (response.status.valid) {
+          let user = response;
+          this.userService.setUser(user);
 
-        this.router.navigate(["/", "my-account"])
-
+          this.router.navigate(["/" ,"my-account"])
+        } else {
+          alert(response.error);
+        }
 
       }, (error) => {
         console.log(error);
         alert(error.error);
       }
     );
-
   }
-
 }
+
+

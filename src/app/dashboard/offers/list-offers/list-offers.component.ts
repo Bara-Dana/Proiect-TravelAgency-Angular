@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {OfferModel} from "../../../modules/offer-model";
+import {OfferModel} from "../../../models/offer-model";
 import {OffersService} from "../offers.service";
 
 @Component({
@@ -17,8 +17,6 @@ export class ListOffersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.offers = this.offersService.get();
-
     this.offersService.get().subscribe((response: any) => {
         console.log('response');
         console.log(response);
@@ -33,5 +31,8 @@ export class ListOffersComponent implements OnInit {
   onSelectOffer(id: number) {
     this.onSelect.emit(id);
   }
+
+
+
 
 }

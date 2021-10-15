@@ -7,7 +7,11 @@ export const environment = {
   apiUrl: 'http://localhost:8080',
   username: 'Numele meu',
   homeDescription:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    " It is all about adventure. That is what was founded upon and what the company is still all about. Discovering countries, cultures, environments, cities, mountain ranges, deserts, coasts and jungles; exploring this amazing planet we all live on.\n" +
+    "\n" +
+    "You know you’re in good hands. All our office staff have a passion for travel and adventure, and between us we’ve notched up experience that spans 171 different countries – all of which means we know how to give you the best experience when you travel with us. We’ve even won awards for it.\n" +
+    "\n" +
+    "That’s not all. In their former lives, our team members have been professional archaeologists, wildlife guides, overland drivers, mountain leaders, diving and ski specialists and mountain bike gurus – and we use our expertise to give you the very best adventure possible. Extensive planning, research, fact-finding and training are just some of the ways this expertise comes through in your adventure.",
 };
 
 /*

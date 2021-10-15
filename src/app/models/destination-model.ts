@@ -4,5 +4,5 @@ export interface DestinationModel {
   id: number;
   name: string;
   description: string;
-  country?: CountryModel;
+  country: CountryModel;
 }

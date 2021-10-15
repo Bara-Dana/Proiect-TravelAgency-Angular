@@ -24,8 +24,9 @@ export class MyAccountComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
+
 
   onSubmit(): void {
     console.log(this.form.value);

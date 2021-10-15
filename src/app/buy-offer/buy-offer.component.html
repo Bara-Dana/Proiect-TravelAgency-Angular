@@ -1,6 +1,7 @@
+
 <mat-card class="card-container" *ngIf="data">
 
-  <img [src]="data.offer.imageUrl" >
+  <img [src]="data.offer.imageUrl" style="white-space: normal" >
 
   <mat-card-header>
     <mat-card-title>{{ data.offer.title }}</mat-card-title>
@@ -21,9 +22,10 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <br>
+
     <button mat-button (click)="confirmOffer()" *ngIf="userService.getUser()">Confirm offer</button>
     <button mat-button (click)="login()" *ngIf="!userService.getUser()">login</button>
   </mat-card-content>
 
 </mat-card>
+

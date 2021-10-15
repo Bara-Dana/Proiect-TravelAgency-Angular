@@ -14,10 +14,6 @@
         <mat-label>Description</mat-label>
         <input placeholder="Description" matInput type="text" formControlName="description">
       </mat-form-field>
-      <!--      <mat-form-field appearance="standard">-->
-      <!--        <mat-label>Country</mat-label>-->
-      <!--        <input placeholder="Country" matInput type="text" formControlName="country">-->
-      <!--      </mat-form-field>-->
       <mat-form-field appearance="standard">
         <mat-label>Country</mat-label>
         <mat-select [(ngModel)]="selectedCountry" formControlName="country">
@@ -30,7 +26,7 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="onSubmit()">SAVE</button>
-    <button mat-button>DELETE</button>
+    <button mat-button (click)="onDelete()" *ngIf="form.controls['id'].value">DELETE</button>
   </mat-card-actions>
 </mat-card>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserModel} from "../modules/user-model";
+import {UserModel} from "../models/user-model";
 import {UserService} from "../user/user.service";
 import {Router} from "@angular/router";
 
@@ -42,4 +42,7 @@ export class NavigationToolbarComponent implements OnInit {
 
   }
 
+  // onSearch() {
+  //   this.router.navigateByUrl('/search-offer')
+  // }
 }

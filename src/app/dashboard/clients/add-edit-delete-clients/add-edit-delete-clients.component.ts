@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {ClientModel} from "../../../modules/client-model";
+import {ClientModel} from "../../../models/client-model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ClientsService} from "../clients.service";
 
@@ -91,6 +91,4 @@ export class AddEditDeleteClientsComponent implements OnInit {
       console.log(error);
     });
   }
-
-
 }

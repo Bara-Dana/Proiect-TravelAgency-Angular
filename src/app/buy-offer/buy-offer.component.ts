@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {ClientModel} from "../modules/client-model";
-import {OfferModel} from "../modules/offer-model";
+import {ClientModel} from "../models/client-model";
+import {OfferModel} from "../models/offer-model";
 import {ClientsService} from "../dashboard/clients/clients.service";
 import {OffersService} from "../dashboard/offers/offers.service";
 import {Router} from "@angular/router";
@@ -14,8 +14,10 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 })
 export class BuyOfferComponent implements OnInit {
 
+
   users: Array<ClientModel> = [];
   selectedUserId: number = -1;
+  private dialog: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: { offer: OfferModel },
               private clientsService: ClientsService,
@@ -24,9 +26,12 @@ export class BuyOfferComponent implements OnInit {
               private router: Router,
               public userService: UserService) {
     console.log(data);
+
   }
 
   ngOnInit(): void {
+
+    this.dialog.updateSize('65%')
     this.clientsService.get().subscribe((response: any) => {
         for (let i = 0; i < response.length; i++) {
           let client: ClientModel = {
@@ -58,6 +63,7 @@ export class BuyOfferComponent implements OnInit {
       });
     console.log(this.data.offer.id);
     console.log(this.selectedUserId);
+    this.router.navigateByUrl('/home')
   }
 
   login() {

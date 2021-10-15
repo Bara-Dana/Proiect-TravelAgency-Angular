@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
-import {OfferModel} from "../../../modules/offer-model";
+import {OfferModel} from "../../../models/offer-model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DestinationModel} from "../../../modules/destination-model";
+import {DestinationModel} from "../../../models/destination-model";
 import {OffersService} from "../offers.service";
 import {DestinationsService} from "../../destinations/destinations.service";
 
@@ -33,7 +33,7 @@ export class AddEditDeleteOfferComponent implements OnInit {
 
   ngOnInit(): void {
     this.setupForm();
-    this.destinationsService.get().subscribe((response: any) => {
+    this.destinationsService.getDestination().subscribe((response: any) => {
         this.destinations = response;
       },
       (error) => {

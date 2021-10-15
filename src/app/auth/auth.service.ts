@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {environment} from "../../environments/environment";
+import {pipe} from "rxjs";
+import {map} from "rxjs/operators";
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', }), responseType: 'text' as 'json' };
 
@@ -8,18 +11,19 @@ const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/js
 })
 export class AuthService {
 
-  // httpClient - ne ajuta sa trimitem date catre server(adica ce faceam cu Postman)
   constructor(private httpClient: HttpClient) { }
 
-  public login(data: any){
-    return this.httpClient.post("http://localhost:8080/auth/login", data);
+  public login(data: any) {
+    return this.httpClient.post(`${environment.apiUrl}/auth/login`,data);
+
   }
 
   public register(data: any){
-    return this.httpClient.post("http://localhost:8080/auth/register", data, httpOptions);
+    return this.httpClient.post(`${environment.apiUrl}/auth/register`, data, httpOptions);
+
   }
 
   public forgotPassword(data: any){
-    return this.httpClient.post("http://localhost:8080/auth/forgot-password", data);
+    return this.httpClient.post(`${environment.apiUrl}/auth/forgot-password`, data)
   }
 }

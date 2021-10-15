@@ -12,13 +12,15 @@ export class AuthComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+   this.router.navigate([ 'auth']);
+  }
 
   openComponent(): void {
     this.router.navigate(['/', 'component', 'show-myname']);
   }
 
-  onAuthType(auth: string): void {
+   onAuthType(auth: string): void {
     this.authType = auth;
   }
 

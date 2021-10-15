@@ -1,4 +1,4 @@
-import {ContinentModel} from "../modules/continent-model";
+import {ContinentModel} from "../models/continent-model";
 
 
 export class Constants {

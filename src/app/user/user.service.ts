@@ -1,6 +1,6 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {UserModel} from "../modules/user-model";
+import {UserModel} from "../models/user-model";
 import {Router} from "@angular/router";
 import {environment} from "../../environments/environment";
 
@@ -16,6 +16,7 @@ export class UserService {
 
   constructor(private http: HttpClient,
               private router: Router) { }
+
   public setUser(user: any): void {
     this.user = user;
   }
@@ -43,4 +44,5 @@ export class UserService {
   public deleteAccount() {
     return this.http.delete(`${environment.apiUrl}/user/deleteUser/` + this.user?.id);
   }
+
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {DestinationModel} from "../../../modules/destination-model";
+import {DestinationModel} from "../../../models/destination-model";
+
 
 @Component({
   selector: 'app-preview-destinations',
@@ -8,7 +9,8 @@ import {DestinationModel} from "../../../modules/destination-model";
 })
 export class PreviewDestinationsComponent implements OnInit {
 
-  @Input() destination: DestinationModel | undefined;
+  @Input()
+  destination: DestinationModel | undefined;
 
   constructor() { }
 

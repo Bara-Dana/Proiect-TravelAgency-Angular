@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {CountryModel} from "../../../modules/country-model";
-import {DestinationsService} from "../destinations.service";
+import {CountryModel} from "../../../models/country-model";
+import {CountryService} from "../add-edit-delete-destination/add-edit-delete-country/country.service";
 
 @Component({
   selector: 'app-list-countries',
@@ -12,12 +12,12 @@ export class ListCountriesComponent implements OnInit {
   @Output() onSelect: EventEmitter<number>;
   countries: Array<CountryModel> = [];
 
-  constructor(private destinationsService: DestinationsService) {
+  constructor(private countryService: CountryService) {
     this.onSelect = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
-    this.destinationsService.getCountries().subscribe((response: any) => {
+    this.countryService.getCountries().subscribe((response: any) => {
         console.log(response);
         this.countries = response;
       },

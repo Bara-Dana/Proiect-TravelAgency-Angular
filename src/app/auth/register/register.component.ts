@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
       retypePassword: ['', Validators.minLength(6)],
     });
   }
-
   ngOnInit(): void {}
 
   onRegister(): void {
@@ -31,10 +30,13 @@ export class RegisterComponent implements OnInit {
 
       if(response.status == 200) {
         alert(response.message);
+
       } else {
         alert(response.error);
       }
+
     })
+
   }
 
 }

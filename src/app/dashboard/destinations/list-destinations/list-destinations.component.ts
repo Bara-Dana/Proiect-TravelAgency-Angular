@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {DestinationModel} from "../../../modules/destination-model";
+import {DestinationModel} from "../../../models/destination-model";
 import {DestinationsService} from "../destinations.service";
 
 @Component({
@@ -13,15 +13,15 @@ export class ListDestinationsComponent implements OnInit {
   destinations: Array<DestinationModel> = [];
 
   constructor(private destinationsService: DestinationsService) {
-    this.onSelect = new EventEmitter();
+    this.onSelect = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
-    this.destinationsService.get().subscribe((response: any) => {
+    this.destinationsService.getDestination().subscribe((response: any) => {
         console.log(response);
         this.destinations = response;
       },
-      (error: any) => {
+      (error) => {
         console.log('error');
         console.log(error);
       });
@@ -30,6 +30,5 @@ export class ListDestinationsComponent implements OnInit {
   onSelectDestination(destinationId: number){
     this.onSelect.emit(destinationId);
   }
-
 
 }

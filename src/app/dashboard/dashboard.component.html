@@ -1,1 +1,23 @@
-<p>dashboard works!</p>
+<app-navigation-toolbar></app-navigation-toolbar>
+
+<!--<app-search-offer></app-search-offer>-->
+
+<h2 class="title-p">Add/Edit/Delete Clients</h2>
+<app-add-edit-delete-clients [client]="selectedClient"></app-add-edit-delete-clients>
+
+<app-list-clients (onSelect)="onReceiveClient($event)"></app-list-clients>
+
+
+<h2 class="title-p">Add/Edit/Delete Country </h2>
+<app-add-edit-delete-country [country]="selectedCountry"></app-add-edit-delete-country>
+
+<app-list-countries (onSelect)="onReceiveCountry($event)"></app-list-countries>
+
+<h2 class="title-p">Add/Edit/Delete Destinations</h2>
+<app-add-edit-delete-destination [destination]="selectedDestination"></app-add-edit-delete-destination>
+
+<app-list-destinations (onSelect)="onReceiveDestination($event)"></app-list-destinations>
+
+<h2 class="title-p">Add/Edit/Delete Offer</h2>
+<app-add-edit-delete-offer [offer]="selectedOffer"></app-add-edit-delete-offer>
+<app-list-offers (onSelect)="onReceiveOffer($event)"></app-list-offers>

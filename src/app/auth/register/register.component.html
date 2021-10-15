@@ -1,5 +1,4 @@
 <div class="div-container">
-
   <form [formGroup]="registerForm" class="form-container">
     <mat-form-field>
       <mat-label>First name</mat-label>
@@ -25,7 +24,6 @@
       <mat-label>Retype Password</mat-label>
       <input placeholder="Password" matInput type="password" formControlName="retypePassword">
     </mat-form-field>
-
 
     <button [disabled]="!registerForm.valid" (click)="onRegister()" mat-raised-button color="primary">Register</button>
   </form>
