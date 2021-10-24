@@ -17,6 +17,8 @@ export class UserService {
   constructor(private http: HttpClient,
               private router: Router) { }
 
+
+
   public setUser(user: any): void {
     this.user = user;
   }

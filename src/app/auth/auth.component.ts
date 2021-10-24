@@ -22,6 +22,7 @@ export class AuthComponent implements OnInit {
 
    onAuthType(auth: string): void {
     this.authType = auth;
+
   }
 
 

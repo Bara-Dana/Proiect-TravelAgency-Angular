@@ -31,7 +31,7 @@ export class BuyOfferComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dialog.updateSize('65%')
+    this.dialogRef.updateSize('100%','100%')
     this.clientsService.get().subscribe((response: any) => {
         for (let i = 0; i < response.length; i++) {
           let client: ClientModel = {

@@ -37,4 +37,8 @@ export class DestinationsService {
   getDestination() {
     return this.http.get(`${environment.apiUrl}/destination/getDestinations`);
   }
+
+  previewDestination(destinationId: number) {
+    return this.http.get(`${environment.apiUrl}/destination/previewDestination/${destinationId}`);
+  }
 }

@@ -65,7 +65,7 @@ export class AddEditDeleteOfferComponent implements OnInit {
         description: [this.offer.description, Validators.compose([Validators.required, Validators.minLength(15)])],
         pricePerNight: [this.offer.pricePerNight, Validators.compose([Validators.required, Validators.min(0)])],
         contactNumber: [this.offer.contactNumber, Validators.compose([Validators.required, Validators.minLength(10)])],
-        destinationId: [this.offer.destinationId],
+        destinationId: [this.offer.destination.id],
       })
     }
   }

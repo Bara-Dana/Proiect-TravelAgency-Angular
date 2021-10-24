@@ -1,3 +1,5 @@
+import {DestinationModel} from "./destination-model";
+
 export interface OfferModel {
 
   imageUrl: string;
@@ -6,5 +8,5 @@ export interface OfferModel {
   description: string;
   pricePerNight: number;
   contactNumber: string;
-  destinationId: number;
+  destination: DestinationModel;
 }

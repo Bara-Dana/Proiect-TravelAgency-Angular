@@ -39,7 +39,10 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatOptionModule} from "@angular/material/core";
 import {MatInputModule} from "@angular/material/input";
 import {AddEditDeleteCountryComponent} from './dashboard/destinations/add-edit-delete-destination/add-edit-delete-country/add-edit-delete-country.component';
-import {SearchOfferComponent} from "./dashboard/offers/serach-offer/search-offer.component";
+
+import { ViewDetailsComponent } from './dashboard/destinations/view-details/view-details.component';
+import { SearchComponent } from './search/search.component';
+
 
 
 
@@ -69,7 +72,9 @@ import {SearchOfferComponent} from "./dashboard/offers/serach-offer/search-offer
     NavigationToolbarComponent,
     UserComponent,
     AddEditDeleteCountryComponent,
-    SearchOfferComponent,
+
+    ViewDetailsComponent,
+    SearchComponent,
 
 
 
@@ -93,10 +98,12 @@ import {SearchOfferComponent} from "./dashboard/offers/serach-offer/search-offer
     RouterModule,
 
 
+
   ],
   entryComponents: [BuyOfferComponent],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false, }}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }

@@ -20,6 +20,7 @@ export class MyAccountComponent implements OnInit {
       email: [this.userService.getUser().email, Validators.email],
       password: ['', Validators.minLength(6)],
       retypePassword: ['', Validators.minLength(6)],
+
     });
 
   }
@@ -30,6 +31,7 @@ export class MyAccountComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.form.value);
+
     if (this.form.valid) {
       this.userService.updateAccount(this.form.value).subscribe((response: any) => {
           console.log(response);
@@ -39,9 +41,12 @@ export class MyAccountComponent implements OnInit {
           console.log('error');
           console.log(error);
         });
+
     } else {
       alert("Invalid form");
     }
+
+
   }
 
   deleteAccount() {

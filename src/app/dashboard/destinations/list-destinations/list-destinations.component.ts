@@ -20,6 +20,7 @@ export class ListDestinationsComponent implements OnInit {
     this.destinationsService.getDestination().subscribe((response: any) => {
         console.log(response);
         this.destinations = response;
+
       },
       (error) => {
         console.log('error');
@@ -27,8 +28,8 @@ export class ListDestinationsComponent implements OnInit {
       });
   }
 
-  onSelectDestination(destinationId: number){
-    this.onSelect.emit(destinationId);
+  onSelectDestination(id: number){
+    this.onSelect.emit(id);
   }
 
 }

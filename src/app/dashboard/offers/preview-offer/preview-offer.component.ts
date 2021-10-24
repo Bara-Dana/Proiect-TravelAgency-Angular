@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {BuyOfferComponent} from "../../../buy-offer/buy-offer.component";
 import {MatDialog} from "@angular/material/dialog";
 import {DestinationsService} from "../../destinations/destinations.service";
+import {PreviewDestinationsComponent} from "../../destinations/preview-destinations/preview-destinations.component";
+import {ViewDetailsComponent} from "../../destinations/view-details/view-details.component";
 
 @Component({
   selector: 'app-preview-offer',
@@ -11,30 +13,26 @@ import {DestinationsService} from "../../destinations/destinations.service";
 export class PreviewOfferComponent implements OnInit {
 
   @Input() offer: any = undefined;
-  destination: any = undefined
-  constructor(private dialog: MatDialog,
-              private destinations: DestinationsService) { }
+
+
+  constructor(private dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     console.log(this.offer);
+
   }
 
-  onBuy():void {
-    let dialogRef = this.dialog.open(BuyOfferComponent, { data: {offer: this.offer} });
+  onBuy(): void {
+    let dialogRef = this.dialog.open(BuyOfferComponent, {data: {offer: this.offer}});
   }
-
 
   onDetails() {
 
-    this.destinations.getById(this.destination.id).subscribe((response: any) => {
-        console.log('response');
-        console.log(response);
-        this.destinations = response;
-      },
-      (error: any) => {
-        console.log('error');
-        console.log(error);
-      });
+    let dialogRef = this.dialog.open(ViewDetailsComponent, {data: {destination: this.offer.destination}});
+
 
   }
+
+
 }
