@@ -43,3 +43,9 @@ Modul Administrare
 
 edit user
 
+in search sa apara lista dedesupt cum trimit lista
+
+   <mat-select [(ngModel)]="selectedUserId">
+        <mat-option *ngFor="let client of users" [value]="client.id">
+          {{ client.firstName }} {{ client.lastName }}
+        </mat-option>

@@ -3,6 +3,11 @@
     <span>Travel agency</span>
     <span class="example-spacer"></span>
 
+    <button mat-icon-button  (click)="onSearch()" >
+      <mat-icon >search</mat-icon>
+    </button>
+
+
 <button mat-icon-button (click)="onDashboard()" *ngIf="currentUser">
   <mat-icon>dashboard</mat-icon>
 </button>

@@ -4,7 +4,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
 import {AppRoutingModule} from "./app-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthComponent} from './auth/auth.component';
@@ -42,6 +41,8 @@ import {AddEditDeleteCountryComponent} from './dashboard/destinations/add-edit-d
 
 import { ViewDetailsComponent } from './dashboard/destinations/view-details/view-details.component';
 import { SearchComponent } from './search/search.component';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 
@@ -96,7 +97,8 @@ import { SearchComponent } from './search/search.component';
     MatToolbarModule,
     MatInputModule,
     RouterModule,
-
+    MatRadioModule,
+    MatMenuModule,
 
 
   ],

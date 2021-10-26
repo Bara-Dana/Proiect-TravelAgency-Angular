@@ -1,24 +1,30 @@
-<!--<div>-->
-<!--<h2> search by price or destination </h2>-->
+<mat-card class="card-container">
+  <mat-card-header>
+    <mat-card-title> Search by price or destination </mat-card-title>
+  </mat-card-header>
 
-<!--<form [formGroup]="searchForm" >-->
-<!--  <mat-form-field appearance="standard">-->
-<!--&lt;!&ndash;    <mat-radio-group aria-label="Search " formControlName="selection">&ndash;&gt;-->
-<!--&lt;!&ndash;      <mat-radio-button value="1">By price</mat-radio-button>&ndash;&gt;-->
-<!--&lt;!&ndash;      <br>&ndash;&gt;-->
-<!--&lt;!&ndash;      <mat-radio-button value="2">By destinations</mat-radio-button>&ndash;&gt;-->
-<!--&lt;!&ndash;    </mat-radio-group>&ndash;&gt;-->
-<!--    <mat-label>Selection</mat-label>-->
-<!--    <input placeholder="select" matInput type="text" formControlName="selection">-->
+  <mat-card-content>
+  <form [formGroup]="searchForm" class="form-container">
 
-<!--  </mat-form-field>-->
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select formControlName="selection">
+          <mat-option value="1" >By price</mat-option>
+          <mat-option value="2">By destination</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-<!--  <mat-form-field appearance="standard">-->
-<!--    <mat-label>SearchCriteria</mat-label>-->
-<!--    <input placeholder="search" matInput type="text" formControlName="searchCriteria">-->
-<!--  </mat-form-field>-->
+      <mat-form-field appearance="fill">
+        <mat-label>SearchCriteria</mat-label>
+        <input  placeholder="Search"   matInput type="number" formControlName="searchCriteria">
+      </mat-form-field>
 
-<!--  <button (click)=onSearch()>Start search</button>-->
-<!--</form>-->
-<!--</div>-->
-<p>shdjvgfdyfg</p>
+ </form>
+ </mat-card-content>
+  <mat-card-actions>
+    <button (click)=onSearch()>Start search</button>
+  </mat-card-actions>
+</mat-card>
+
+<h2 class="title-p">Our offers</h2>
+<app-list-offers></app-list-offers>

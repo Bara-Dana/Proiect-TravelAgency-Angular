@@ -9,13 +9,14 @@ import {environment} from "../../environments/environment";
 @Injectable({
   providedIn: 'root'
 })
-export class SearchService{
-  searchOffers : Array<OfferModel> = [];
+export class SearchService {
+  searchOffers: Array<OfferModel> = [];
 
   constructor(private http: HttpClient,
-              private router: Router) { }
+              private router: Router) {
+  }
 
-public search(data: SearchModel){
-    return this.http.post(`${environment.apiUrl}/search`,data)
-}
+  public search(data: SearchModel) {
+    return this.http.post(`${environment.apiUrl}/offers/search`, data)
+  }
 }

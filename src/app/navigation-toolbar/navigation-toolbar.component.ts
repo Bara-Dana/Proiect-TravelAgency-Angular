@@ -47,6 +47,6 @@ export class NavigationToolbarComponent implements OnInit {
   //   this.router.navigateByUrl('/search-offer')
   // }
   onSearch() {
-    //   this.router.navigateByUrl('/search')
+    this.router.navigateByUrl('/search')
   }
 }
