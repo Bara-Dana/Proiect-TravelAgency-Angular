@@ -1,10 +1,8 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {CountryModel} from "../../../models/country-model";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {DestinationModel} from "../../../models/destination-model";
 import {DestinationsService} from "../destinations.service";
 import {Router} from "@angular/router";
-import {CountryService} from "../add-edit-delete-destination/add-edit-delete-country/country.service";
 
 @Component({
   selector: 'app-view-details',
@@ -21,6 +19,7 @@ export class ViewDetailsComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: { destination: DestinationModel },
               public dialogRef: MatDialogRef<ViewDetailsComponent>,
               private destinationService: DestinationsService,
+              private router: Router,
 
 
               ) {
@@ -33,8 +32,10 @@ export class ViewDetailsComponent implements OnInit {
 
   }
 
-
-
+  back() {
+    this.dialogRef.close();
+    this.router.navigateByUrl('/home')
+  }
 }
 
 

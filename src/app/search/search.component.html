@@ -10,6 +10,7 @@
         <mat-label>Select</mat-label>
         <mat-select formControlName="selection">
           <mat-option value="1" >By price</mat-option>
+          <br>
           <mat-option value="2">By destination</mat-option>
         </mat-select>
       </mat-form-field>
@@ -23,8 +24,12 @@
  </mat-card-content>
   <mat-card-actions>
     <button (click)=onSearch()>Start search</button>
+    <button (click)=onBack()>Back</button>
+
   </mat-card-actions>
 </mat-card>
 
-<h2 class="title-p">Our offers</h2>
-<app-list-offers></app-list-offers>
+
+<div class="list-container">
+  <app-preview-offer *ngFor="let offer of offers" [offer]="offer"></app-preview-offer>
+</div>

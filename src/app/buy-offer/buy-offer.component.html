@@ -25,6 +25,8 @@
 
     <button mat-button (click)="confirmOffer()" *ngIf="userService.getUser()">Confirm offer</button>
     <button mat-button (click)="login()" *ngIf="!userService.getUser()">login</button>
+    <button mat-button (click)="back()">Back</button>
+
   </mat-card-content>
 </mat-card>
 

@@ -31,7 +31,6 @@ export class PreviewOfferComponent implements OnInit {
 
     let dialogRef = this.dialog.open(ViewDetailsComponent, {data: {destination: this.offer.destination}});
 
-
   }
 
 

@@ -71,4 +71,8 @@ export class BuyOfferComponent implements OnInit {
     this.router.navigateByUrl('/auth');
   }
 
+  back() {
+    this.dialogRef.close();
+    this.router.navigateByUrl('/home')
+  }
 }

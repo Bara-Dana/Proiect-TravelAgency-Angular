@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SearchService} from "./search.service";
 import {OfferModel} from "../models/offer-model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -10,10 +11,12 @@ import {OfferModel} from "../models/offer-model";
 })
 export class SearchComponent implements OnInit {
   searchForm: FormGroup;
+
   offers: Array<OfferModel> = [];
 
   constructor(private formBuilder: FormBuilder,
-              private searchService: SearchService) {
+              private searchService: SearchService,
+              private router: Router) {
     this.searchForm = this.formBuilder.group({
       selection: ['1'],
       searchCriteria: ['', Validators.minLength(1)]
@@ -28,11 +31,14 @@ export class SearchComponent implements OnInit {
     this.searchService.search(this.searchForm.value).subscribe((response: any) => {
         console.log(response);
         this.offers = response;
-
       },
       (error: any) => {
         console.log('error');
         console.log(error);
       });
+  }
+
+  onBack() {
+    this.router.navigateByUrl('/home')
   }
 }
